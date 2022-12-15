@@ -135,6 +135,7 @@ var filter = document.getElementById('filter');
 
 // Form submit event
 form.addEventListener('submit', addItem);
+
 // Delete event
 itemList.addEventListener('click', removeItem);
 // Filter event
@@ -146,6 +147,7 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var discription = document.getElementById('discription').value;
 
   // Create new li element
   var li = document.createElement('li');
@@ -153,6 +155,7 @@ function addItem(e){
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(" "+discription));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
@@ -169,6 +172,7 @@ function addItem(e){
   // Append li to list
   itemList.appendChild(li);
 }
+
 
 // Remove item
 function removeItem(e){
